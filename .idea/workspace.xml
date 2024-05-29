@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bc8b336f-cb2d-4c7f-a277-02412142f29a" name="Changes" comment="crud de compra completo">
+      <change afterPath="$PROJECT_DIR$/web/src/main/webapp/miperfil.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/negocio/src/test/java/co/edu/uniquindio/proyecto/test/UsuarioServicioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/negocio/src/test/java/co/edu/uniquindio/proyecto/test/UsuarioServicioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/persistencia/src/test/java/co/edu/uniquindio/proyecto/UsuarioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/persistencia/src/test/java/co/edu/uniquindio/proyecto/UsuarioTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/co/edu/uniquinidio/proyecto/bean/SeguridadBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/co/edu/uniquinidio/proyecto/bean/SeguridadBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/MainLibros.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/MainLibros.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/target/classes/co/edu/uniquinidio/proyecto/bean/SeguridadBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/web/target/classes/co/edu/uniquinidio/proyecto/bean/SeguridadBean.class" afterDir="false" />
+    </list>
+    <list id="e98f8b66-cf25-4d50-aa50-d5d386cb19ff" name="Changes by JuanDa Cortes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="UML Class" />
+        <option value="UML Sequence" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;OPEN&quot;,
+      &quot;author&quot;: &quot;Alejo-Aguirre&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;author&quot;: &quot;Alejo-Aguirre&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="fec44b22-e578-47ed-90ef-bd85aa7c8ab9" />
+        <option name="url" value="https://github.com/Alejo-Aguirre/proyecto-final-PA.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/web/src/main/webapp/index.xhtml" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2MRpYPi3iOwZC9GwmrhuwCS7lha" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Sequence&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-11&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/escanor/Documentos/workspaces-2023-1/default-inellej/uniMarket/negocio/src/main/java/co/edu/uniquindio/proyecto&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lenovo/Desktop/new programas eclipse/libreriaSofware&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ddbe8596be10fe3b95cbdbddfdc5e389&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="co.edu.uniquindio.proyecto.servicios" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lenovo\Desktop\new programas eclipse\proyecto-final-PA\web\src\main\webapp" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenovo\Desktop\new programas eclipse\libreria bases\web\src\main\webapp" />
+      <recent name="C:\Users\lenovo\Desktop\new programas eclipse\proyecto-final-PA\web\src\main\webapp\uploads" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="co.edu.uniquindio.proyecto.servicios" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="co.edu.uniquinidio.proyecto.bean" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.UsuarioTest.resgistraUsuario">
+    <configuration name="CategoriaTest.actualizarCategoria" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="persistencia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.proyecto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="co.edu.uniquindio.proyecto" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.proyecto.CategoriaTest" />
+      <option name="METHOD_NAME" value="actualizarCategoria" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioTest.listarUsuario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="persistencia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.proyecto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="co.edu.uniquindio.proyecto" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.proyecto.UsuarioTest" />
+      <option name="METHOD_NAME" value="listarUsuario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioTest.resgistraUsuario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="persistencia" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquindio.proyecto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="co.edu.uniquindio.proyecto" />
+      <option name="MAIN_CLASS_NAME" value="co.edu.uniquindio.proyecto.UsuarioTest" />
+      <option name="METHOD_NAME" value="resgistraUsuario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
+      <module name="web" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="co.edu.uniquinidio.proyecto.WebApplication" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="co.edu.uniquinidio.proyecto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dockerfile build" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="maven3.8.4-openjdk-11_build" />
+          <option name="buildCliOptions" value="--target build" />
+          <option name="buildKitEnabled" value="true" />
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.Dockerfile build" />
+      <item itemvalue="JUnit.UsuarioTest.listarUsuario" />
+      <item itemvalue="JUnit.UsuarioTest.resgistraUsuario" />
+      <item itemvalue="JUnit.CategoriaTest.actualizarCategoria" />
+      <item itemvalue="Spring Boot.WebApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UsuarioTest.resgistraUsuario" />
+        <item itemvalue="JUnit.UsuarioTest.listarUsuario" />
+        <item itemvalue="Spring Boot.WebApplication" />
+        <item itemvalue="Docker.Dockerfile build" />
+        <item itemvalue="JUnit.CategoriaTest.actualizarCategoria" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc8b336f-cb2d-4c7f-a277-02412142f29a" name="Changes" comment="" />
+      <created>1677740297387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677740297387</updated>
+      <workItem from="1677740298437" duration="598000" />
+      <workItem from="1677740906735" duration="1005000" />
+      <workItem from="1677741924828" duration="569000" />
+      <workItem from="1677742504228" duration="2789000" />
+      <workItem from="1677767259369" duration="1122000" />
+      <workItem from="1677947490782" duration="3333000" />
+      <workItem from="1677969352149" duration="39000" />
+      <workItem from="1678669845481" duration="88000" />
+      <workItem from="1678860631619" duration="128000" />
+      <workItem from="1678860770141" duration="1890000" />
+      <workItem from="1678912855698" duration="25889000" />
+      <workItem from="1678977247869" duration="3119000" />
+      <workItem from="1679540323614" duration="100000" />
+      <workItem from="1679548537527" duration="60000" />
+      <workItem from="1679551608967" duration="4588000" />
+      <workItem from="1679720155905" duration="618000" />
+      <workItem from="1679776400558" duration="11654000" />
+      <workItem from="1681163191565" duration="649000" />
+      <workItem from="1681711749600" duration="3599000" />
+      <workItem from="1681740983285" duration="4105000" />
+      <workItem from="1681790132049" duration="15283000" />
+      <workItem from="1681830720980" duration="366000" />
+      <workItem from="1681862935083" duration="112000" />
+      <workItem from="1681953389540" duration="20651000" />
+      <workItem from="1682057320626" duration="3495000" />
+      <workItem from="1682083017364" duration="10000" />
+      <workItem from="1682111614090" duration="26196000" />
+      <workItem from="1682465038807" duration="16071000" />
+      <workItem from="1682546910968" duration="14348000" />
+      <workItem from="1682569999353" duration="9666000" />
+      <workItem from="1684373489628" duration="49000" />
+      <workItem from="1684378263657" duration="4640000" />
+      <workItem from="1684385594648" duration="1220000" />
+      <workItem from="1684437640281" duration="9659000" />
+      <workItem from="1684447386472" duration="360000" />
+      <workItem from="1684524523775" duration="1278000" />
+      <workItem from="1684525892242" duration="25488000" />
+      <workItem from="1684615021898" duration="1389000" />
+      <workItem from="1684617357703" duration="989000" />
+      <workItem from="1684812850237" duration="1048000" />
+      <workItem from="1684887994890" duration="24000" />
+      <workItem from="1685476124255" duration="9679000" />
+      <workItem from="1685556389328" duration="25000" />
+      <workItem from="1685604065782" duration="35000" />
+      <workItem from="1685628733080" duration="778000" />
+      <workItem from="1693424083742" duration="641000" />
+      <workItem from="1696906532086" duration="51000" />
+      <workItem from="1696909205822" duration="22000" />
+      <workItem from="1699157886334" duration="215000" />
+      <workItem from="1699158250573" duration="255000" />
+      <workItem from="1699469407723" duration="3446000" />
+      <workItem from="1699907340145" duration="2570000" />
+      <workItem from="1699910055752" duration="28349000" />
+      <workItem from="1700080569113" duration="1193000" />
+      <workItem from="1700340851018" duration="4066000" />
+      <workItem from="1700364530051" duration="13508000" />
+      <workItem from="1700378082008" duration="815000" />
+      <workItem from="1700421707451" duration="12530000" />
+      <workItem from="1700451663655" duration="383000" />
+      <workItem from="1700538097072" duration="2387000" />
+      <workItem from="1700596344542" duration="8672000" />
+      <workItem from="1700605086399" duration="137000" />
+      <workItem from="1700605247825" duration="30240000" />
+      <workItem from="1700684069552" duration="40954000" />
+      <workItem from="1700754446436" duration="5078000" />
+      <workItem from="1700759893216" duration="2089000" />
+      <workItem from="1700775072557" duration="9832000" />
+      <workItem from="1700787832609" duration="1760000" />
+      <workItem from="1708646473557" duration="640000" />
+      <workItem from="1709597014106" duration="1184000" />
+      <workItem from="1712090939853" duration="1044000" />
+      <workItem from="1712092083044" duration="128000" />
+      <workItem from="1713225121278" duration="1914000" />
+      <workItem from="1714009366865" duration="1183000" />
+      <workItem from="1714186923270" duration="1301000" />
+      <workItem from="1714276493540" duration="134000" />
+      <workItem from="1715296937307" duration="157000" />
+      <workItem from="1715297112778" duration="47000" />
+      <workItem from="1715298577822" duration="493000" />
+      <workItem from="1715816716475" duration="169000" />
+      <workItem from="1716780431061" duration="3944000" />
+      <workItem from="1716793543730" duration="2578000" />
+      <workItem from="1716796869781" duration="1908000" />
+      <workItem from="1716798803055" duration="1637000" />
+      <workItem from="1716840486660" duration="6537000" />
+      <workItem from="1716851945252" duration="1028000" />
+    </task>
+    <task id="LOCAL-00001" summary="servicos de moderador , nota : se quito la cedula de la clase persona,se modifico el archivo usuariossql borrando las cedulas y se probaron los test nuevamente para corroborar la funcionalidad">
+      <created>1682501406341</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1682501406341</updated>
+    </task>
+    <task id="LOCAL-00002" summary="servicos de compra crud y una consulta">
+      <created>1682579782227</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682579782227</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cambios producto">
+      <created>1684379627082</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1684379627082</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Web al 15%">
+      <created>1684386789331</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1684386789331</updated>
+    </task>
+    <task id="LOCAL-00005" summary="config jsf completa y funcional">
+      <created>1684440959950</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1684440959950</updated>
+    </task>
+    <task id="LOCAL-00006" summary="registrar usurio funcional con la base de datos">
+      <created>1684529759310</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1684529759310</updated>
+    </task>
+    <task id="LOCAL-00007" summary="crear producto lista faltaria que el usuario al crear pueda seleccionar la categoria">
+      <created>1684531798152</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1684531798152</updated>
+    </task>
+    <task id="LOCAL-00008" summary="el usuario ya puede seleccionar la categoria en la que desea crear el producto">
+      <created>1684533873669</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1684533873669</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Desplegable de categorias">
+      <created>1684543223257</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1684543223257</updated>
+    </task>
+    <task id="LOCAL-00010" summary="subir imagenes funcional">
+      <created>1684549716539</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684549716539</updated>
+    </task>
+    <task id="LOCAL-00011" summary="subir imagenes funcional,se actualiza el git ignore">
+      <created>1684549889569</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1684549889569</updated>
+    </task>
+    <task id="LOCAL-00012" summary="fecha limite 2 meses">
+      <created>1684551392284</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684551392285</updated>
+    </task>
+    <task id="LOCAL-00013" summary="data view imagen para los productos">
+      <created>1685483667277</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685483667277</updated>
+    </task>
+    <task id="LOCAL-00014" summary="data view imagen para los productos">
+      <created>1685485383079</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1685485383079</updated>
+    </task>
+    <task id="LOCAL-00015" summary="main de user y producto">
+      <created>1699926787745</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1699926787745</updated>
+    </task>
+    <task id="LOCAL-00016" summary="cambios">
+      <created>1699940240006</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1699940240006</updated>
+    </task>
+    <task id="LOCAL-00017" summary="buscador y diagrama visual en desarollo">
+      <created>1700082466324</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1700082466325</updated>
+    </task>
+    <task id="LOCAL-00018" summary="sesion a la mitad">
+      <created>1700376719048</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1700376719048</updated>
+    </task>
+    <task id="LOCAL-00019" summary="sesion completa y funcional">
+      <created>1700426732025</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1700426732025</updated>
+    </task>
+    <task id="LOCAL-00020" summary="se agregaron variables a usersy moders, se agrego enum de editorial,pendietes cruds y funcionalidades">
+      <created>1700434243804</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1700434243804</updated>
+    </task>
+    <task id="LOCAL-00021" summary="implementacion del crud de compras ,solo funciona seteado,faltan las consultas">
+      <created>1700688645547</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1700688645547</updated>
+    </task>
+    <task id="LOCAL-00022" summary="crud de compra listo">
+      <created>1700732033549</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1700732033550</updated>
+    </task>
+    <task id="LOCAL-00023" summary="crud de compra completo">
+      <created>1700757733625</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1700757733625</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="servicos de moderador , nota : se quito la cedula de la clase persona,se modifico el archivo usuariossql borrando las cedulas y se probaron los test nuevamente para corroborar la funcionalidad" />
+    <MESSAGE value="servicos de compra crud y una consulta" />
+    <MESSAGE value="cambios producto" />
+    <MESSAGE value="Web al 15%" />
+    <MESSAGE value="config jsf completa y funcional" />
+    <MESSAGE value="registrar usurio funcional con la base de datos" />
+    <MESSAGE value="crear producto lista faltaria que el usuario al crear pueda seleccionar la categoria" />
+    <MESSAGE value="el usuario ya puede seleccionar la categoria en la que desea crear el producto" />
+    <MESSAGE value="Desplegable de categorias" />
+    <MESSAGE value="subir imagenes funcional" />
+    <MESSAGE value="subir imagenes funcional,se actualiza el git ignore" />
+    <MESSAGE value="fecha limite 2 meses" />
+    <MESSAGE value="data view imagen para los productos" />
+    <MESSAGE value="main de user y producto" />
+    <MESSAGE value="cambios" />
+    <MESSAGE value="buscador y diagrama visual en desarollo" />
+    <MESSAGE value="sesion a la mitad" />
+    <MESSAGE value="sesion completa y funcional" />
+    <MESSAGE value="se agregaron variables a usersy moders, se agrego enum de editorial,pendietes cruds y funcionalidades" />
+    <MESSAGE value="consultas y cruds" />
+    <MESSAGE value="compra y consultas" />
+    <MESSAGE value="compras crud en camino" />
+    <MESSAGE value="implementacion del crud de compras ,solo funciona seteado,faltan las consultas" />
+    <MESSAGE value="crud de compra listo" />
+    <MESSAGE value="crud de compra completo" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud de compra completo" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/persistencia/src/test/java/co/edu/uniquindio/proyecto/UsuarioTest.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

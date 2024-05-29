@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Crear nuevo usuario</title>
+    <style type="text/css">
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            width: 400px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        .input-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .command-button {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
+</h:head>
+
+<h:body>
+    <h:form>
+        <p:panel header="Registrar Usuario" style="background-color: #111111; color: #d3cfcf; font-weight: bold; padding: 10px;"
+                 styleClass="panel-header">
+
+        <p:panel header="Informacion del usuario " style="width: 800px; margin: 0 auto;">
+            <div class="form-grid">
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Cedula" for="cedula_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="cedula_u" value="#{usuarioBean.usuario.cedula}" required="true"/>
+                    </div>
+                </div>
+
+
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Nombre" for="nombre_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="nombre_u" value="#{usuarioBean.usuario.nombre}" required="true"/>
+                    </div>
+                </div>
+
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Apellido" for="apellido_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="apellido_u" value="#{usuarioBean.usuario.apellido}" required="true"/>
+                    </div>
+                </div>
+
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Telefono" for="telefono_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="telefono_u" value="#{usuarioBean.usuario.telefono}" required="false"/>
+                    </div>
+                </div>
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Email" for="email_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="email_u" value="#{usuarioBean.usuario.email}" required="true"/>
+                    </div>
+                </div>
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Direccion" for="direccion_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="direccion_u" value="#{usuarioBean.usuario.direccion}" required="true"/>
+                    </div>
+                </div>
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Edad" for="edad_e" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="edad_e" value="#{usuarioBean.usuario.edad}" required="true"/>
+                    </div>
+                </div>
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Departamento" for="departamento_p"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:selectOneMenu id="departamento_p" value="#{usuarioBean.departamentoSeleccionado}">
+                            <f:selectItem itemLabel="Seleccionar" itemValue=""/>
+                            <f:selectItems value="#{usuarioBean.departamentos}" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Ciudad" for="ciudad_p"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:selectOneMenu id="ciudad_p" value="#{usuarioBean.ciudadSeleccionada}">
+                            <f:selectItem itemLabel="Seleccionar" itemValue=""/>
+                            <f:selectItems value="#{usuarioBean.ciudades}" />
+                        </p:selectOneMenu>
+                    </div>
+                </div>
+
+            </div>
+        </p:panel>
+
+
+
+        <p:panel header="Informacion del login" style="width: 800px; margin: 0 auto;">
+            <div class="form-grid">
+                <div class="ui-g">
+                    <div class="ui-g-4">
+                        <h:outputLabel value="Username" for="username_u" styleClass="input-label"/>
+                    </div>
+                    <div class="ui-g-8">
+                        <p:inputText id="username_u" value="#{usuarioBean.usuario.username}" required="true"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui-g">
+                <div class="ui-g-4">
+                    <h:outputLabel value="Password" for="password_u" styleClass="input-label"/>
+                </div>
+                <div class="ui-g-8">
+                    <p:password id="password_u" value="#{usuarioBean.usuario.password}" required="true"/>
+                </div>
+            </div>
+        </p:panel>
+
+            <p:growl id="growl" showDetail="true" sticky="true" life="5000"/>
+            <p:commandButton value="Registrar Usuario" action="#{usuarioBean.registrarUsuario()}" update="@form"
+                             icon="pi pi-user-plus" styleClass="command-button"/>
+
+
+        </p:panel>
+    </h:form>
+</h:body>
+
+</html>
+

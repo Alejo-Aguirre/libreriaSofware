@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<!-- Incluye el headTemplate -->
+<ui:composition template="headerTemplate.xhtml">
+
+<ui:define name="content" >
+    <div class="container mt-5">
+        <h4>Usuarios</h4>
+        <h:form id="usuariosForm">
+            <!-- Tabla de Usuarios -->
+            <p:dataTable id="usuariosTable" var="usuario" value="#{mainUsuarioBean.usuarios}"
+                         paginator="true" rows="5" selection="#{mainUsuarioBean.usuarioSeleccionado}"
+                         rowKey="#{usuario.codigo}" editMode="row" rowEditListener="#{mainUsuarioBean.onRowEdit}">
+
+                <!-- Columna de Edición -->
+                <p:column style="width:32px">
+                    <p:rowEditor />
+                </p:column>
+
+
+                <p:column headerText="Cédula" filterBy="#{usuario.cedula}" filterOptions="{placeholder: 'Buscar por cédula'}">
+                    <h:outputText value="#{usuario.cedula}" />
+                </p:column>
+                <p:column headerText="Codigo">
+                    <h:outputText value="#{usuario.codigo}"/>
+                </p:column>
+                <p:column headerText="Nombre">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{usuario.nombre}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{usuario.nombre}" style="width:100%" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column headerText="Correo">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{usuario.email}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{usuario.email}" style="width:100%" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+                <p:column headerText="Ciudad">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{usuario.miCiudad}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{usuario.miCiudad}" style="width:100%" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Direccion">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{usuario.direccion}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{usuario.direccion}" style="width:100%" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Edad">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{usuario.edad}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{usuario.edad}" style="width:100%" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Username">
+                    <p:cellEditor>
+                        <f:facet name="output">
+                            <h:outputText value="#{usuario.username}" />
+                        </f:facet>
+                        <f:facet name="input">
+                            <p:inputText value="#{usuario.username}" style="width:100%" />
+                        </f:facet>
+                    </p:cellEditor>
+                </p:column>
+
+                <p:column headerText="Acciones">
+                    <!-- Eliminar -->
+                    <p:commandButton value="Eliminar" action="#{mainUsuarioBean.eliminarUsuario(usuario.codigo)}"
+                                     update=":usuariosForm:usuariosTable :usuariosForm:growl @form" process="@this"/>
+                    <!-- Editar -->
+                    <p:commandButton value="Editar" oncomplete="PF('editDialog').show()" update=":usuariosForm:editForm" process="@this">
+                        <f:setPropertyActionListener target="#{mainUsuarioBean.usuarioSeleccionado}" value="#{usuario}" />
+                    </p:commandButton>
+                </p:column>
+
+            </p:dataTable>
+
+            <!-- Formulario de edición -->
+            <p:dialog header="Editar Usuario" widgetVar="editDialog" resizable="false" modal="true" showEffect="fade" hideEffect="fade">
+                <h:panelGrid id="editForm" columns="2" cellpadding="5">
+
+                    <h:outputText value="Codigo:" />
+                    <p:inputText value="#{mainUsuarioBean.usuarioSeleccionado.codigo}" />
+
+                    <h:outputText value="Nombre:" />
+                    <p:inputText value="#{mainUsuarioBean.usuarioSeleccionado.nombre}" />
+
+                    <h:outputText value="Correo:" />
+                    <p:inputText value="#{mainUsuarioBean.usuarioSeleccionado.email}" />
+
+                    <h:outputText value="Direccion:" />
+                    <p:inputText value="#{mainUsuarioBean.usuarioSeleccionado.direccion}" />
+
+                    <h:outputText value="Username:" />
+                    <p:inputText value="#{mainUsuarioBean.usuarioSeleccionado.username}" />
+
+                    <h:outputText value="Password:" />
+                    <p:inputText value="#{mainUsuarioBean.usuarioSeleccionado.password}" />
+
+                    <!-- Agrega más campos según las propiedades del usuario que desees editar -->
+
+                    <!-- Botón Guardar -->
+                    <p:commandButton value="Guardar" action="#{mainUsuarioBean.onRowEdit}" update=":usuariosForm:growl :usuariosForm:usuariosTable" process="@this" styleClass="p-button-success"/>
+
+
+
+                </h:panelGrid>
+            </p:dialog>
+
+            <!-- Mensajes -->
+            <p:growl id="growl" showDetail="true" sticky="true" life="5000"/>
+
+            <div class="text-center">
+                <!-- Botones -->
+                <p:commandButton value="Crear Usuario" action="#{mainUsuarioBean.redirigirFormulario}" icon="pi pi-plus"
+                                 update=":usuariosForm" process="@this"/>
+                <p:commandButton value="Generar Reporte" action="#{mainUsuarioBean.generarReportePDF('a')}" icon="pi pi-file-pdf"
+                                 update=":usuariosForm:growl" process="@this"/>
+
+                <p:commandButton value="Generar Reporte Intermedio" action="#{mainUsuarioBean.generarReporteIntermedioPDF('Armenia')}" icon="pi pi-file-pdf"
+                                 update=":usuariosForm:growl" process="@this"/>
+
+                <p:commandButton value="Generar Reporte Complejo" action="#{mainUsuarioBean.generarReporteComplejoPDF('Armenia')}" icon="pi pi-file-pdf"
+                                 update=":usuariosForm:growl" process="@this"/>
+            </div>
+
+        </h:form>
+    </div>
+</ui:define>
+
+</ui:composition>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="headerTemplate.xhtml">
+
+    <ui:define name="content">
+        <div class="container mt-5">
+            <div style="margin-top: -60px;">
+                <h4 style="margin-bottom: 20px;">Compras</h4>
+            </div>
+            <h:form style="margin-top: -20px;">
+
+            <!-- Tabla de Compras -->
+            <p:dataTable id="comprasTable" var="compra" value="#{mainCompraBean.compras}" paginator="true" rows="4"
+                         emptyMessage="No se encontraron compras">
+
+                <p:column headerText="Codigo" filterBy="#{compra.codigo}" filterMatchMode="contains">
+                    <h:outputText value="#{compra.codigo}"/>
+                </p:column>
+
+                <p:column headerText="Fecha de Creación">
+                    <h:outputText value="#{compra.fechaCreacion}"/>
+                </p:column>
+
+                <p:column headerText="Valor Total">
+                    <h:outputText value="#{compra.valorTotal}"/>
+                </p:column>
+
+                <p:column headerText="Medio de Pago">
+                    <h:outputText value="#{compra.medioDePago}"/>
+                </p:column>
+
+                <p:column headerText="Usuario">
+                    <h:outputText value="#{compra.miUsuario.nombre}"/>
+                </p:column>
+
+
+                <p:column headerText="Acciones">
+                    <!-- Botones de Acciones -->
+                    <p:commandButton value="Actualizar" action="#{mainCompraBean.verDetalles(compra)}"/>
+                    <p:commandButton value="Eliminar" action="#{mainCompraBean.eliminarCompra(compra.codigo)}" update="@form"/>
+                </p:column>
+            </p:dataTable>
+
+
+            <!-- Botones -->
+            <div style="text-align: center; margin-top: 10px;">
+                <p:commandButton value="Realizar Nueva Compra" action="#{mainCompraBean.redirigirFormulario()}" icon="pi pi-plus"/>
+                <p:commandButton value="Generar Reporte" action="#{mainCompraBean.generarReportePDF('001')}" icon="pi pi-file-pdf"
+                                 process="@this"/>
+
+                <!-- Mensajes de Alerta -->
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+            </div>
+        </h:form>
+    </div>
+</ui:define>
+
+</ui:composition>
+
+</html>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mi primera imagen</title>
+    <style type="text/css">
+        .center-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</h:head>
+<h:body>
+    <p:panel header="Crear Libro" style="margin-bottom:20px">
+        <h:form>
+            <p:panel header="Información Básica">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel value="Seleccione la categoría" for="categoria_p"/>
+                    <p:selectOneMenu id="categoria_p" value="#{libroBean.codigoCategoriaSeleccionada}">
+                        <f:selectItem itemLabel="Seleccionar" itemValue=""/>
+                        <f:selectItems value="#{libroBean.categorias}" var="categoria" itemValue="#{categoria.codigo}" itemLabel="#{categoria.nombre}"/>
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value="Editorial" for="editorial_p"/>
+                    <p:selectOneMenu id="editorial_p" value="#{libroBean.editorialSeleccionada}">
+                        <f:selectItem itemLabel="Seleccionar" itemValue=""/>
+                        <f:selectItems value="#{libroBean.editoriales}" />
+                    </p:selectOneMenu>
+
+
+
+                    <p:outputLabel value="Codigo" for="codigo_u"/>
+                    <p:inputText id="codigo_u" value="#{libroBean.libro.codigo}" required="true"/>
+
+                    <p:outputLabel value="Nombre" for="nombre_p"/>
+                    <p:inputText id="nombre_p" value="#{libroBean.libro.nombre}" required="true"/>
+
+                    <p:outputLabel value="Autor" for="autor_u"/>
+                    <p:inputText id="autor_u" value="#{libroBean.libro.autor}" required="true"/>
+
+                    <p:outputLabel value="Unidades" for="unidades_p"/>
+                    <p:inputText id="unidades_p" value="#{libroBean.libro.unidades}" required="true" type="number"/>
+
+                    <p:outputLabel value="Precio" for="precio_p"/>
+                    <p:inputText id="precio_p" value="#{libroBean.libro.precio}" required="false" type="number"/>
+
+                    <p:outputLabel value="Descripcion" for="descripcion_p"/>
+                    <p:textEditor id="descripcion_p" value="#{libroBean.libro.descripcion}" height="200" secure="false"/>
+
+
+                </h:panelGrid>
+            </p:panel>
+
+            <p:panel header="Cargar Imágenes">
+                <h:panelGrid columns="2" cellpadding="5">
+                    <p:outputLabel for="imagen" value="Cargar imágenes:"/>
+                    <p:fileUpload id="imagen" listener="#{libroBean.subirImagenes}" mode="advanced" multiple="true" sizeLimit="1000000" fileLimit="5" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" required="true"
+                                  label="Seleccionar archivo"/>
+
+                    <!-- Otros campos relacionados con la carga de imágenes -->
+                    <!-- ... -->
+                </h:panelGrid>
+            </p:panel>
+
+            <p:commandButton value="Crear libro" action="#{libroBean.crearLibro()}" update="@form" icon="pi pi-user-plus" styleClass="center-button"/>
+
+            <!-- Mensajes de Alerta -->
+            <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+        </h:form>
+    </p:panel>
+    <p:growl showDetail="true"/>
+</h:body>
+</html>

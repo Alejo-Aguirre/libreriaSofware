@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<!-- Incluye el headTemplate -->
+<ui:composition template="headerTemplate.xhtml">
+
+    <ui:define name="content">
+        <div class="container mt-5">
+            <h4>Empleados</h4>
+            <h:form id="empleadosForm">
+                <!-- Barra de búsqueda -->
+                <!-- Tabla de Empleados -->
+                <p:dataTable id="empleadosTable" var="empleado" value="#{mainEmpleadoBean.empleados}"
+                             paginator="true" rows="5" selection="#{mainEmpleadoBean.empleadoSeleccionado}"
+                             rowKey="#{empleado.codigo}" editMode="row" rowEditListener="#{mainEmpleadoBean.onRowEdit}">
+
+                    <!-- Columna de Edición -->
+                    <p:column style="width:32px">
+                        <p:rowEditor />
+                    </p:column>
+
+                    <p:column headerText="Cédula" filterBy="#{empleado.cedula}" filterOptions="{placeholder: 'Buscar por cédula'}">
+                        <h:outputText value="#{empleado.cedula}" />
+                    </p:column>
+                    <p:column headerText="Codigo">
+                        <h:outputText value="#{empleado.codigo}"/>
+                    </p:column>
+                    <p:column headerText="Nombre">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{empleado.nombre}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{empleado.nombre}" style="width:100%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Apellido">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{empleado.apellido}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{empleado.apellido}" style="width:100%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Departamento">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{empleado.miDepartamento}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{empleado.miDepartamento}" style="width:100%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+                    <p:column headerText="Username">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{empleado.username}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{empleado.username}" style="width:100%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+                    <p:column headerText="Edad">
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{empleado.edad}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <p:inputText value="#{empleado.edad}" style="width:50%" />
+                            </f:facet>
+                        </p:cellEditor>
+                    </p:column>
+
+
+                    <!-- ... (otras columnas) ... -->
+                    <p:column headerText="Acciones" >
+                        <!-- Eliminar -->
+                        <p:commandButton value="Eliminar" action="#{mainEmpleadoBean.eliminarEmpleado(empleado.codigo)}"
+                                         update=":empleadosForm:empleadosTable :empleadosForm:growl @form" process="@this"/>
+                        <!-- Actualizar -->
+                        <p:commandButton value="Actualizar" oncomplete="PF('editDialog').show()" update=":empleadosForm:editForm" process="@this">
+                            <f:setPropertyActionListener target="#{mainEmpleadoBean.empleadoSeleccionado}" value="#{empleado}" />
+                        </p:commandButton>
+                    </p:column>
+
+                </p:dataTable>
+
+                <!-- Formulario de edición -->
+                <p:dialog header="Actualizar Empleado" widgetVar="editDialog" resizable="false" modal="true" showEffect="fade" hideEffect="fade">
+                    <h:panelGrid id="editForm" columns="2" cellpadding="5">
+
+                        <h:outputText value="Cedula:" />
+                        <p:inputText value="#{mainEmpleadoBean.empleadoSeleccionado.cedula}" />
+                        <h:outputText value="Nombre:" />
+                        <p:inputText value="#{mainEmpleadoBean.empleadoSeleccionado.nombre}" />
+                        <h:outputText value="Email:" />
+                        <p:inputText value="#{mainEmpleadoBean.empleadoSeleccionado.email}" />
+                        <h:outputText value="Username:" />
+                        <p:inputText value="#{mainEmpleadoBean.empleadoSeleccionado.username}" />
+                        <h:outputText value="Username:" />
+                        <p:inputText value="#{mainEmpleadoBean.empleadoSeleccionado.password}" />
+
+                        <!-- ... (otros campos) ... -->1
+
+                        <!-- Botón Actualizar -->
+                        <p:commandButton value="Actualizar" action="#{mainEmpleadoBean.actualizarEmpleado}" update=":empleadosForm:growl :empleadosForm:empleadosTable" process="@this" styleClass="p-button-success"/>
+                        <!-- Botón Cancelar (para cerrar el diálogo) -->
+                        <p:commandButton value="Cancelar" onclick="PF('editDialog').hide();" process="@this" />
+
+                    </h:panelGrid>
+                </p:dialog>
+
+                <!-- Mensajes -->
+                <p:growl id="growl" showDetail="true" sticky="true" life="5000"/>
+
+                <!-- Contenedor centrado para los botones -->
+                <div class="text-center">
+                    <!-- Botones -->
+                    <p:commandButton value="Crear Empleado" action="#{mainEmpleadoBean.redirigirFormulario}"
+                                     icon="pi pi-plus"
+                                     update=":empleadosForm" process="@this"/>
+                    <p:commandButton value="Generar Reporte" action="#{mainEmpleadoBean.generarReportePDF('a')}"
+                                     icon="pi pi-file-pdf"
+                                     update=":empleadosForm:growl" process="@this"/>
+
+                    <p:commandButton value="Generar Reporte Intermedio"
+                                     action="#{mainEmpleadoBean.generarReporteIntermedioPDF('Quindio')}" icon="pi pi-file-pdf"
+                                     update=":empleadosForm:growl" process="@this"/>
+
+                    <p:commandButton value="Generar Reporte Complejo"
+                                     action="#{mainEmpleadoBean.generarReporteComplejoPDF('Quindio')}" icon="pi pi-file-pdf"
+                                     update=":empleadosForm:growl" process="@this"/>
+                </div>
+
+            </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>
+</html>

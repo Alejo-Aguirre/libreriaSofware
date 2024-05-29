@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<!-- Incluye el headTemplate -->
+<ui:composition template="headerTemplate.xhtml">
+
+    <ui:define name="content">
+        <div class="container mt-5">
+            <h4>Libros</h4>
+            <h:form>
+
+                <!-- Tabla de Libros -->
+                <div style="overflow-x: auto;">
+                    <p:dataTable id="librosTable" var="libro" value="#{mainLibroBean.libros}" paginator="true" rows="5"
+                                 emptyMessage="No se encontraron libros"
+                                 styleClass="table">
+
+                        <!-- Sección de columnas de la tabla -->
+                        <p:column headerText="Código" filterBy="#{libro.codigo}" filterMatchMode="contains">
+                            <h:outputText value="#{libro.codigo}"/>
+                        </p:column>
+                        <p:column headerText="Nombre">
+                            <h:outputText value="#{libro.nombre}"/>
+                        </p:column>
+                        <p:column headerText="Autor">
+                            <h:outputText value="#{libro.autor}"/>
+                        </p:column>
+                        <p:column headerText="Unidades">
+                            <h:outputText value="#{libro.unidades}"/>
+                        </p:column>
+                        <p:column headerText="Precio">
+                            <h:outputText value="#{libro.precio}"/>
+                        </p:column>
+                        <p:column headerText="Fecha Creación">
+                            <h:outputText value="#{libro.fechaCreacion}"/>
+                        </p:column>
+                        <p:column headerText="Categoría">
+                            <h:outputText value="#{libro.miCategoria.nombre}"/>
+                        </p:column>
+                        <p:column headerText="Acciones">
+                            <!-- Botones de Acciones -->
+                            <p:commandButton value="Actualizar" action="#{mainLibroBean.actualizarLibro(libro)}" styleClass="btn btn-primary btn-sm"/>
+                            <p:commandButton value="Eliminar" action="#{mainLibroBean.eliminarLibro(libro.codigo)}" update="@form" styleClass="btn btn-danger btn-sm"/>
+                        </p:column>
+                    </p:dataTable>
+                </div>
+
+                <!-- Botones -->
+                <div class="text-center mt-3">
+                    <p:commandButton value="Crear Libro" action="#{mainLibroBean.redirigirFormulario}" icon="pi pi-plus"
+                                     process="@this" styleClass="btn btn-success"/>
+                    <p:commandButton value="Generar Reporte" action="#{mainLibroBean.generarReportePDF('Gilmer Meza')}"
+                                     icon="pi pi-file-pdf"
+                                     process="@this" styleClass="btn btn-secondary"/>
+                    <p:commandButton value="Generar Reporte Intermedio"
+                                     action="#{mainLibroBean.generarReporteIntermedio}" icon="pi pi-file-pdf" styleClass="btn btn-secondary"/>
+                    <p:commandButton value="Generar Reporte Complejo" action="#{mainLibroBean.generarReporteComplejo('3')}"
+                                     icon="pi pi-file-pdf" styleClass="btn btn-secondary"/>
+
+                    <!-- Mensajes de Alerta -->
+                    <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+                </div>
+
+            </h:form>
+        </div>
+    </ui:define>
+
+</ui:composition>
+</html>
